@@ -51,16 +51,16 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-900 text-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-transparent"></div>
+    <section id="projects" className="py-20 bg-gray-50 text-gray-900 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Featured <span className="text-blue-400">Projects</span>
+            Featured <span className="text-blue-600">Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-pink-500 mx-auto mb-8"></div>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Showcasing innovative solutions that blend technology with real-world impact.
           </p>
         </div>
@@ -69,11 +69,11 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2"
+              className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-blue-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-2"
             >
               {/* Project header with gradient and animated image */}
               <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden flex items-center justify-center`}>
-                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="absolute inset-0 bg-black/10"></div>
                 <img
                   src={project.image}
                   alt={project.title}
@@ -81,10 +81,10 @@ const Projects: React.FC = () => {
                 />
                 <project.icon
                   size={48}
-                  className="absolute text-white opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
+                  className="absolute text-white opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"
                 />
                 <div className="absolute top-4 right-4">
-                  <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white">
+                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-gray-900 shadow-sm">
                     {project.category}
                   </span>
                 </div>
@@ -92,10 +92,10 @@ const Projects: React.FC = () => {
 
               {/* Project content */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm leading-relaxed mb-4 h-20">
+                <p className="text-gray-600 text-sm leading-relaxed mb-4 h-20">
                   {project.description}
                 </p>
 
@@ -104,7 +104,7 @@ const Projects: React.FC = () => {
                   {project.tech.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-xs font-medium border border-gray-600"
+                      className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium border border-gray-200"
                     >
                       {tech}
                     </span>
@@ -113,11 +113,11 @@ const Projects: React.FC = () => {
 
                 {/* Action buttons */}
                 <div className="flex space-x-3">
-                  <button className="flex-1 flex items-center justify-center space-x-2 bg-blue-500/20 hover:bg-blue-500/30 text-blue-400 py-2 px-4 rounded-lg transition-all duration-300">
+                  <button className="flex-1 flex items-center justify-center space-x-2 bg-blue-50 hover:bg-blue-100 text-blue-600 py-2 px-4 rounded-lg transition-all duration-300">
                     <ExternalLink size={16} />
                     <span className="text-sm font-medium">View</span>
                   </button>
-                  <button className="flex-1 flex items-center justify-center space-x-2 bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white py-2 px-4 rounded-lg transition-all duration-300">
+                  <button className="flex-1 flex items-center justify-center space-x-2 bg-gray-100 hover:bg-gray-200 text-gray-700 hover:text-gray-900 py-2 px-4 rounded-lg transition-all duration-300">
                     <Github size={16} />
                     <span className="text-sm font-medium">Code</span>
                   </button>
@@ -129,7 +129,7 @@ const Projects: React.FC = () => {
 
         {/* View more projects button */}
         <div className="text-center mt-16">
-          <button className="group inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-pink-500 hover:from-blue-600 hover:to-pink-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 transform hover:scale-105">
+          <button className="group inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 transform hover:scale-105">
             <span>View All Projects</span>
             <TrendingUp size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
           </button>

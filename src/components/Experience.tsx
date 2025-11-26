@@ -46,44 +46,44 @@ const Experience: React.FC = () => {
   ];
 
   const getColorClasses = (color: string) => {
-    return color === 'primary' 
+    return color === 'primary'
       ? {
-          bg: 'bg-primary-500/20',
-          border: 'border-primary-500',
-          text: 'text-primary-500',
-          glow: 'shadow-primary-500/20'
-        }
+        bg: 'bg-blue-50',
+        border: 'border-blue-200',
+        text: 'text-blue-600',
+        glow: 'shadow-blue-500/10'
+      }
       : {
-          bg: 'bg-accent-500/20',
-          border: 'border-accent-500',
-          text: 'text-accent-500',
-          glow: 'shadow-accent-500/20'
-        };
+        bg: 'bg-purple-50',
+        border: 'border-purple-200',
+        text: 'text-purple-600',
+        glow: 'shadow-purple-500/10'
+      };
   };
 
   return (
-    <section id="experience" className="py-20 bg-dark-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary-500/5 via-transparent to-accent-500/5"></div>
-      
+    <section id="experience" className="py-20 bg-gray-50 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 via-transparent to-purple-50/50"></div>
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Work <span className="text-primary-500">Experience</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Work <span className="text-blue-600">Experience</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto mb-8"></div>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             My professional journey in software development
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto relative">
           {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 via-accent-500 to-primary-500 transform md:-translate-x-0.5"></div>
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 via-purple-200 to-blue-200 transform md:-translate-x-0.5"></div>
 
           {experiences.map((exp, index) => {
             const colors = getColorClasses(exp.color);
             const isEven = index % 2 === 0;
-            
+
             return (
               <div key={index} className={`relative flex items-center mb-12 animate-slide-up`} style={{ animationDelay: `${index * 0.2}s` }}>
                 {/* Timeline node */}
@@ -92,15 +92,15 @@ const Experience: React.FC = () => {
 
                 {/* Content card */}
                 <div className={`w-full md:w-5/12 ml-16 md:ml-0 ${isEven ? 'md:ml-auto md:pl-8' : 'md:pr-8'}`}>
-                  <div className="bg-dark-800/80 backdrop-blur-sm rounded-xl p-6 border border-dark-600 hover:border-gray-500 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/10">
+                  <div className="bg-white rounded-xl p-6 border border-gray-100 hover:border-blue-300 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/5">
                     <div className="flex items-start space-x-4 mb-4">
                       <div className={`w-12 h-12 ${colors.bg} rounded-lg flex items-center justify-center flex-shrink-0`}>
                         <exp.icon size={24} className={colors.text} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-white mb-1">{exp.title}</h3>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-1">{exp.title}</h3>
                         <p className={`${colors.text} font-medium mb-2`}>{exp.company}</p>
-                        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
+                        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
                           <div className="flex items-center space-x-1">
                             <Calendar size={14} />
                             <span>{exp.period}</span>
@@ -111,10 +111,10 @@ const Experience: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <ul className="space-y-2">
                       {exp.achievements.map((achievement, idx) => (
-                        <li key={idx} className="text-gray-300 flex items-start space-x-2">
+                        <li key={idx} className="text-gray-600 flex items-start space-x-2">
                           <Zap size={16} className={`${colors.text} mt-0.5 flex-shrink-0`} />
                           <span className="text-sm leading-relaxed">{achievement}</span>
                         </li>

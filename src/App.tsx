@@ -36,7 +36,7 @@ function App() {
   }, []);
 
   return (
-    <div className="font-inter bg-dark-900 text-white overflow-x-hidden">
+    <div className="font-inter bg-gray-50 text-gray-900 overflow-x-hidden">
       <Header />
       <main>
         <Hero />
